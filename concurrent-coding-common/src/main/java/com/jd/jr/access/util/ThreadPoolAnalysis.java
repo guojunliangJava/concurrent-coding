@@ -10,9 +10,6 @@
  */
 package com.jd.jr.access.util;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ThreadPoolExecutor;
 
@@ -25,7 +22,7 @@ import java.util.concurrent.ThreadPoolExecutor;
  * @since 1.0.0
  */
 public class ThreadPoolAnalysis {
-    private static final Logger log = LoggerFactory.getLogger(ThreadPoolAnalysis.class);
+//    private static final Logger log = LoggerFactory.getLogger(ThreadPoolAnalysis.class);
 
     /**
      * 线程池执行大小统计
@@ -39,7 +36,7 @@ public class ThreadPoolAnalysis {
                 System.err.println("线程池统计线程创建有误");
             }
         } catch (Exception e) {
-            log.warn("线程池执行相关大小统计异常:", e.getMessage());
+//            log.warn("线程池执行相关大小统计异常:", e.getMessage());
         }
     }
 }
