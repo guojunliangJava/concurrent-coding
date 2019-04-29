@@ -8,7 +8,7 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.jd.jr.access.collection;
+package com.jd.jr.access.concurrent;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -24,6 +24,7 @@ import java.util.concurrent.TimeUnit;
  * <p>
  * CountDownLatch是通过一个计数器来实现的，计数器的初始值为线程的数量。每当一个线程完成了自己的任务后，计数器的值就会减1。当计数器值到达0时，它表示所有的线程已经完成了任务，然后在闭锁上等待的线程就可以恢复执行任务。
  *
+ * Executors|Semaphor|Exchanger|CyclicBarrier|CountDownLatch:参考:https://blog.csdn.net/xieyuooo/article/details/8572543
  * @author guojunliang
  * @create 2019/4/26
  * @since 1.0.0

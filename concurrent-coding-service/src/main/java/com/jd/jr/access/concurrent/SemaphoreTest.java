@@ -8,7 +8,7 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.jd.jr.access.collection;
+package com.jd.jr.access.concurrent;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
