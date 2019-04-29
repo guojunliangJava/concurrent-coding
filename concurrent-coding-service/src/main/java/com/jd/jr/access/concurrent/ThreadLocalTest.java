@@ -16,6 +16,7 @@ package com.jd.jr.access.concurrent;
  *
  * @author guojunliang
  * @create 2019/4/29
+ * 参考:https://www.cnblogs.com/dolphin0520/p/3920407.html
  * @since 1.0.0
  */
 public class ThreadLocalTest {
