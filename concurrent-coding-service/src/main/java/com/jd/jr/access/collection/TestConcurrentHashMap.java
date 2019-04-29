@@ -16,6 +16,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * 〈一句话功能简述〉<br>
  * 〈concurrentHashMap测试〉
+ * 参考:https://www.cnblogs.com/ITtangtang/p/3948786.html
  *
  * @author guojunliang
  * @create 2019/4/28

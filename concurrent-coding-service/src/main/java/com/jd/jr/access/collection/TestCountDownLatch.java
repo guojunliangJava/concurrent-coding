@@ -8,7 +8,7 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.jd.jr.access.countDownLatch;
+package com.jd.jr.access.collection;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
