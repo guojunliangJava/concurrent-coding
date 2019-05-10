@@ -6,7 +6,10 @@ threadLocal
 synchronized lock 区别
 
 事务传播行为 隔离级别
-算法(单链表反转, 单链表交叉等,冒泡排序,二分法)
+算法(
+    单链表反转, 单链表交叉等:参考:https://www.jianshu.com/p/634c147fe2a9
+    冒泡排序:https://www.cnblogs.com/shen-hua/p/5422676.html
+    二分法)
 Spring aop实现原理: spring动态代理,是在什么阶段创建代理对象
 两个线程共享变量
 线程池原理,以及大小设置
