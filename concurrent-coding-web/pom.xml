@@ -54,11 +54,31 @@
     </build>
 
     <dependencies>
-        <!--dependency>
-      <groupId>com.jd.jr.access</groupId>
-      <artifactId>[the artifact id of the block to be mounted]</artifactId>
-      <version>1.0-SNAPSHOT</version>
-    </dependency-->
+        <dependency>
+            <groupId>com.jd.jr.access</groupId>
+            <artifactId>concurrent-coding-service</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jd.jr.access</groupId>
+            <artifactId>concurrent-coding-rpc</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jd.jr.access</groupId>
+            <artifactId>concurrent-coding-domain</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jd.jr.access</groupId>
+            <artifactId>concurrent-coding-dao</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jd.jr.access</groupId>
+            <artifactId>concurrent-coding-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
 </project>

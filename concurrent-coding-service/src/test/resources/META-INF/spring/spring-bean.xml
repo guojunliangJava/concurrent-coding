@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+    <!--单实例中注入prototype类型的bean begin-->
+    <bean id="car" class="com.spring.learning.beanfactory.lifecycle.single.di.prototype.Car" scope="prototype"/>
+
+    <bean id="boss" class="com.spring.learning.beanfactory.lifecycle.single.di.prototype.Boss">
+        <lookup-method name="getCar" bean="car"></lookup-method>
+    </bean>
+    <!--单实例中注入prototype类型的bean end-->
+
+    <!--测试Spring FactoryBean 接口实现,创建Car Bean begin-->
+    <bean id="carFactoryBean" class="com.spring.beanfactory.CarFactoryBean" p:carInfo="奔驰,黑色">
+
+    </bean>
+    <!--测试Spring FactoryBean 接口实现,创建Car Bean end-->
+
+
+    <!--测试Spring 默认的PropertyEditorSupport: PropertyEditorRegistrySupport begin-->
+    <bean id="propertyEditorTest" class="com.spring.propertyeditor.PropertyEditorTest"
+          p:bigDecimal1="13.23"></bean>
+    <!--测试Spring 默认的PropertyEditorSupport: PropertyEditorRegistrySupport end-->
+
+    <!--测试Spring自定义属性编辑器 begin-->
+    <bean id="carPro" class="com.spring.propertyeditor.Car"
+          p:brand="奔驰" p:color="黑色"></bean>
+    <!--1:最常用的注入方法:-->
+    <!--<bean id="bossFormal" class="com.spring.propertyeditor.Boss"-->
+    <!--p:car-ref="carPro"></bean>-->
+
+    <!--2:自定义car相关属性编辑器 begin-->
+
+    <!--自定义属性编辑器:com.spring.propertyeditor.Car类型属性编辑器-->
+    <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+        <property name="customEditors">
+            <map>
+                <entry key="com.spring.propertyeditor.Car" value="com.spring.propertyeditor.CustomCarPropertyEditorSupport">
+                </entry>
+            </map>
+        </property>
+    </bean>
+    <bean id="boss1" class="com.spring.propertyeditor.Boss"
+          p:car="奔驰,黑色"></bean>
+    <!--2:自定义car相关属性编辑器 end-->
+
+    <!--测试Spring自定义属性编辑器 end-->
+
+</beans>

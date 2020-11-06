@@ -7,6 +7,7 @@ import com.spring.aop.service.IhelloWorldService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.dao.DuplicateKeyException;
 
 /**
  * @ClassName AopTest.java
@@ -29,6 +30,7 @@ public class AopTest {
 
 
         System.out.println("======================================");
+
     }
 
 }
