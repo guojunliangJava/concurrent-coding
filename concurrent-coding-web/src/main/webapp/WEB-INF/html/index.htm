@@ -1,0 +1,32 @@
+<script language="javascript">
+    // 通过正则校验运单号:简单匹配
+    function checkTrackingOrderByRegular(trackingOrder) {
+        trackingOrder = trim(trackingOrder);
+        // if (!trackingOrder.match(/^[A-Za-z0-9-]{6,}$/)) {
+        if (!trackingOrder.match(/^[A-Za-z0-9-]+$/)) {
+            alert("请正确填写物流单号!");
+            return false;
+        }
+    }
+
+    //去左空格;
+    function ltrim(s) {
+        return s.replace(/(^\s*)/g, "");
+    }
+
+    //去右空格;
+    function rtrim(s) {
+        return s.replace(/(\s*$)/g, "");
+    }
+
+    //去左右空格;
+    function trim(s) {
+        return s.replace(/(^\s*)|(\s*$)/g, "");
+    }
+
+</script>
+
+<form>
+    <input type="text" name="txt"/>
+    <input type="submit" onclick="return checkTrackingOrderByRegular(this.form.txt.value)"/>
+</form>

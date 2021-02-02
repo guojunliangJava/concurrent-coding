@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+    <bean id="carWithOutDefaultConstruct" class="com.spring.beanfactory.CarWithOutDefaultConstruct">
+        <constructor-arg index="0" value="奔驰"/>
+        <property name="color" value="黑色"/>
+    </bean>
+
+    <!--构造方法循环依赖测试:-->
+    <bean id="circleA" class="com.spring.beanfactory.CircleA" scope="prototype">
+        <constructor-arg name="circleB" ref="circleB"></constructor-arg>
+    </bean>
+
+    <bean  id="circleB" class="com.spring.beanfactory.CircleB">
+        <constructor-arg name="circleC" ref="circleC"></constructor-arg>
+    </bean>
+
+    <bean  id="circleC" class="com.spring.beanfactory.CircleC">
+    </bean>
+
+
+    <bean  id="circleB_2" class="com.spring.beanfactory.CircleB">
+        <constructor-arg name="circleC" ref="circleC_2"></constructor-arg>
+    </bean>
+
+    <bean  id="circleC_2" class="com.spring.beanfactory.CircleC" scope="prototype">
+    </bean>
+
+    <bean  id="circleB_3" class="com.spring.beanfactory.CircleB" scope="prototype">
+        <constructor-arg name="circleC" ref="circleC_3"></constructor-arg>
+    </bean>
+
+    <bean  id="circleC_3" class="com.spring.beanfactory.CircleC" scope="prototype">
+    </bean>
+
+    <!--setter方法注入-->
+    <bean id="setterCircleA" class="com.spring.beanfactory.circle.setter.CircleA"
+    init-method="init" destroy-method="destroy">
+        <property name="circleB" ref="setterCircleB"></property>
+    </bean>
+    <bean id="setterCircleB" class="com.spring.beanfactory.circle.setter.CircleB" scope="prototype">
+        <property name="circleC" ref="setterCircleC"></property>
+    </bean>
+    <bean id="setterCircleC" class="com.spring.beanfactory.circle.setter.CircleC" scope="prototype">
+        <!--<property name="circleA" ref="setterCircleA"></property>-->
+    </bean>
+</beans>
